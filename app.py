@@ -39,7 +39,7 @@ def callback():
 def handle_message(event):
     r = "靠北聽不懂"
     msg = event.message.text
-    if '早安' in msg : 
+    if '早安' or '午安' or '晚安' in msg : 
         r = msg
     line_bot_api.reply_message(
         event.reply_token,
