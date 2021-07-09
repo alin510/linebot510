@@ -38,7 +38,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    if "早安" or "你好"  in msg : 
+    if "早安" in msg : 
         r = msg
     else :
         r ＝ '聽不懂?'
