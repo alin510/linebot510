@@ -37,13 +37,19 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    r = "靠北聽不懂"
     msg = event.message.text
-    if '早安' or '午安' or '晚安' in msg : 
-        r = msg
+    r = "靠北聽不懂"
+    words = ['早安','午安','晚安','安安','你好','hi','hello','哈摟'] 
+    for word in words : 
+        if word in msg : 
+            r = msg
+    if '吃' in msg : 
+        r = '吃飽了' 
+    elif '玩' in msg :
+        r = '在家休息'
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text= r ))
+        TextSendMessage(text=r))
 
 
 if __name__ == "__main__":
